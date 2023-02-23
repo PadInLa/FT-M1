@@ -1,6 +1,7 @@
 "use strict";
 
 function BinarioADecimal(num) {
+  var test = 0;
   return parseInt(num, 2);
 }
 
