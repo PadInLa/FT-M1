@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /* EJERCICIO 1
 Implementar la clase LinkedList, definiendo los siguientes métodos:
@@ -10,9 +10,29 @@ Implementar la clase LinkedList, definiendo los siguientes métodos:
   search(isEven), donde isEven es una función que retorna true cuando recibe por parámetro un número par, busca un nodo cuyo valor sea un número par.
   En caso de que la búsqueda no arroje resultados, search debe retornar null.
 */
-function LinkedList() {}
+function LinkedList() {
+  this.head = null;
+  LinkedList.prototype.add = function (value) {
+    let node = new Node(value);
+    if (head === null) {
+      this.head = node;
+    } else {
+      let act = this.head;
+      while (act.next != null) {
+        act = act.next;
+      }
+      act = node;
+    }
+  };
+  LinkedList.prototype.remove = function () {};
 
-function Node(value) {}
+  LinkedList.prototype.search = function () {};
+}
+
+function Node(value) {
+  this.value = value;
+  this.next = null;
+}
 
 /* EJERCICIO 2
 Implementar la clase HashTable.
@@ -33,7 +53,7 @@ function HashTable() {}
 // --------------------------------
 
 module.exports = {
-   Node,
-   LinkedList,
-   HashTable,
+  Node,
+  LinkedList,
+  HashTable,
 };
